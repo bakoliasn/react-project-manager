@@ -1,0 +1,686 @@
+@font-face {
+    font-family: 'icomoon';
+    src:    url('/fonts/icomoon.eot?4ufd5w');
+    src:    url('/fonts/icomoon.eot?4ufd5w#iefix') format('embedded-opentype'),
+        url('/fonts/icomoon.ttf?4ufd5w') format('truetype'),
+        url('/fonts/icomoon.woff?4ufd5w') format('woff'),
+        url('/fonts/icomoon.svg?4ufd5w#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checkmark:before {
+    content: "\e900";
+}
+p {
+  font-family: Kanit;
+}
+body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+}
+header {
+    width: 100%;
+    height: 8vh;
+    border-bottom: 1px solid #000;
+background: #2a2a2a; /* fallback for old browsers */       color: white;
+}
+.logo {
+    height: 3vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+    margin-top: 0;
+    width: 30vw;
+    text-align: left;
+    margin-left: 6vw;
+    margin-right: 64vw;
+}
+.nav {
+    position: absolute;
+    right: 0;
+    top: 15px;
+}
+.whitelink {
+color: #fff !important;
+}
+li {
+    display: inline;
+    margin-right: 1em;
+    font-family: Kanit;
+    font-size: 22px;
+}
+.menu {
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    width: 28vw;
+    border-right: 1px solid #000;
+    height: 92vh;
+color: white;
+overflow: scroll;
+overflow-x: hidden;
+background: #3a3a3a; /* fallback for old browsers */
+}
+.indexmenu {
+    position: absolute;
+    top: 8vh;
+    left: 0;
+    width: 28vw;
+    border-right: 1px solid #000;
+    height: 92vh;
+color: white;
+background: #3a3a3a; /* fallback for old browsers */
+}
+.username {
+    font-family: Kanit;
+    text-align: center;
+    margin-top: 11vh;
+    font-size: 28px;
+    overflow: hidden;
+}
+.totalprojects {
+    font-family: Kanit;
+    text-align: center;
+    margin-top: 60vh;
+    font-size: 22px;
+    overflow: hidden;
+}
+.main {
+    position: absolute;
+    left: 28vw;
+    top: 8vh;
+    width: 72vw;
+    height: 92vh;
+    overflow: scroll;
+    overflow-x: hidden;
+/*
+background: #517fa4;
+background: -webkit-linear-gradient(to left, #517fa4 , #243949);
+background: linear-gradient(to left, #517fa4 , #243949);
+ */
+background: #eee; /* fallback for old browsers */
+       }
+.project {
+    width: 33.333333333%;
+    height: 50%;
+    display: block;
+    float: left;
+    padding: 30px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.projectDetails {
+    width: 100%;
+    height: 100%;
+        max-width: 100%;
+    max-height: 100%;
+    border: 1px solid #000;
+    border-radius: 4px;
+    position: relative;
+    color: #000;
+}
+.projectName {
+    text-align: center;
+    font-family: Kanit;
+    margin-top: 5%;
+    margin-bottom: 0;
+    font-size: 18px;
+    height: 20%;
+    overflow: hidden;
+}
+input {
+        -webkit-appearance:none
+}
+.projectView {
+    background-color: #008000;
+    border-radius: 4px;
+    font-family: Kanit;
+    color: white;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    bottom: 5%;
+    height: 15%;
+    max-height: 15%;
+    min-height: 15%;
+    position: absolute;
+    overflow: hidden;
+    border: none
+}
+.headertext {
+    margin: 0; line-height: 5.5vh; font-size: 28px; font-family: Kanit;
+}
+.projectNav {
+height: 60px;
+width: 100%;
+border-bottom: 1px solid #000;
+border-top: 1px solid #000;
+}
+li.projectNav:hover {
+height: 60px;
+width: 100%;
+border-bottom: 1px solid #000;
+border-top: 1px solid #000;
+background: #232526; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #232526 , #414345); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #232526 , #414345); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: white;
+}
+.projectOption {
+display: inline;
+float: left;
+margin: 0;
+height: 100%;
+width: 20% !important;
+min-width: 20% !important;
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: center;
+border-right: 1px solid #000;
+}
+.projectUl {
+height: 100%;
+margin: 0;
+padding: 0;
+}
+.current {
+background: #232526 !important; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #232526 , #414345) !important; /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #232526 , #414345) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: blue !important;
+}
+.projectDescriptionBox {
+margin-top: 4%;
+font-family: Kanit;
+width: 90%;
+margin-right: 5%;
+margin-left: 5%;
+font-size: 16px;
+padding: 10px;
+border: 1px solid #000;
+height: 25%;
+min-height: 25%;
+background-color: white;
+opacity: 1;
+font-weight: bold;
+border-radius: 4px;
+}
+.projectDescriptionBox1 {
+  border-radius: 4px;
+margin-top: 4%;
+font-family: Kanit;
+width: 40%;
+margin-right: 5%;
+padding: 10px;
+padding-top: 80px;
+position: relative;
+border: 1px solid #000;
+height: 50%;
+min-height: 35%;
+background-color: white;
+opacity: 1;
+font-weight: bold;
+}
+.projectBudget {
+  position: relative;
+font-family: Kanit;
+width: 100%;
+height: 100%;
+min-height: 25%;
+background-color: white;
+opacity: 1;
+font-weight: bold;
+}
+.totalBudget {
+  position: absolute;
+  bottom: 0;
+transform: rotate(180deg);
+font-family: Kanit;
+width: 20%;
+margin-left: 5%;
+border: 1px solid #000;
+opacity: 1;
+-webkit-animation: totalBudget 2s; /* For Safari 3.1 to 6.0 */
+    animation: totalBudget 2s;
+    -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+    animation-delay: 1s;
+    max-height: 100%;
+    animation-fill-mode: forwards;
+background: #1D976C; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #1D976C , #93F9B9); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #1D976C , #93F9B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                                                                    font-weight: bold;
+display: block;
+}
+@-webkit-keyframes totalBudget {
+  0%   {height: 8%;}
+  100% {height: 100%;}
+}
+@keyframes totalBudget{
+    0%   {height: 8%;}
+    100% {height: 100%;}
+}
+.totalUsed {
+  position: absolute;
+  bottom: 0;
+transform: rotate(180deg);
+font-family: Kanit;
+width: 20%;
+margin-left: 37.5%;
+border: 1px solid #000;
+opacity: 1;
+-webkit-animation: totalBudget 2s; /* For Safari 3.1 to 6.0 */
+    animation: totalBudget 2s;
+    -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+    animation-delay: 1s;
+      animation-fill-mode: forwards;
+background: #EB3349; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #EB3349 , #F45C43); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #EB3349 , #F45C43); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-weight: bold;
+display: block;
+}
+.totalAvailable{
+  position: absolute;
+  bottom: 0;
+margin-left: 70%;
+transform: rotate(180deg);
+font-family: Kanit;
+width: 20%;
+border: 1px solid #000;
+opacity: 1;
+-webkit-animation: totalBudget 2s; /* For Safari 3.1 to 6.0 */
+    animation: totalBudget 2s;
+    -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+    animation-delay: 1s;
+      animation-fill-mode: forwards;
+background: #1e3c72; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #1e3c72 , #2a5298); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #1e3c72 , #2a5298); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+font-weight: bold;
+display: block;
+}
+.finishedTasks {
+margin-left: 5%;
+width: 90%;
+background-color: #fff;
+margin-top: 3%;
+border-radius: 4px;
+text-align: center;
+font-family: Kanit;
+}
+.expenselist {
+margin-top: 4%;
+width: 55%;
+background-color: #fff;
+border-radius: 4px;
+text-align: center;
+font-family: Kanit;
+margin-bottom: 4%;
+}
+.unfinishedTasks {
+margin-left: 0%;
+height: 100%;
+max-height: 92vh;
+width: 100%;
+margin-right: 0%;
+background-color: #3a3a3a;
+margin-top: 0%;
+border-radius: 4px;
+font-family: Kanit;
+color: white !important;
+font-size: 1.2em
+}
+.title {
+font-size: 1.5em;
+padding: 10px !important;
+}
+td, th {
+border: 1px solid #4b4b4b;
+padding: 10px !important;
+}
+h1 {
+  font-family: "Kanit" !important;
+}
+th {
+text-align: center !important;
+}
+tasklist, td:hover {
+background: #fff;
+}
+td:hover .colornav{
+background: #fff;
+color: #000 !important;
+}
+.odd {
+padding: 10px !important;
+background-color: white;
+}
+.even {
+padding: 10px !important;
+background-color: #f9f9f9;
+}
+.largerfont {
+font-size: 1em;
+}
+.colornav {
+color: #eee !important;
+}
+.colornav:hover {
+text-decoration: none;
+color: #000 !important;
+}
+a:focus {
+text-decoration: none;
+outline: none;
+}
+.overflowscroll {
+overflow: scroll;
+height: 50vh;
+}
+.tasklist {
+text-decoration: none;
+height: 100%;
+width: 100%;
+text-align: none important;
+}
+.length {
+width: 10%;
+}
+.unfinishedlinks {
+margin: 0; padding: 20px; text-align: center;
+border-bottom: 1px solid #4B4B4B;
+}
+.unfinishedlinks:hover {
+background-color: white;
+color: black;
+}
+.vertical {
+  display: inline-block;
+  width: 20%;
+  height: 40px;
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+}
+.vertical {
+  box-shadow: inset 0px 4px 6px #ccc;
+}
+.container1 {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  height: 150%;
+  display: inline-flex;
+}
+.notesInputCompleted {
+  height: 150px;
+  font-family: Kanit;
+  margin-top: 4%;
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
+  min-width: 90%;
+  max-width: 90%;
+}
+.hoursInputCompleted {
+  font-family: Kanit;
+  margin-top: 4%;
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
+  min-width: 90%;
+  max-width: 90%;
+}
+.hoursInputHours {
+  font-family: Kanit;
+  margin-top: 2%;
+  width: 40%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.hoursInputName {
+  font-family: Kanit;
+  margin-top: 2%;
+  width: 40%;
+  text-align: center;
+  margin-left: 4%;
+  margin-right: 4%;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.hoursInputButton {
+  font-family: Kanit;
+  margin-top: 2%;
+  width: 90%;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,0.6);
+  z-index: 100000000000000;
+}
+.editform {
+  position: relative;
+  margin-top: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 60%;
+  height: 60%;
+  border-radius: 10px;
+  background: white;
+  z-index: 100000000000001;
+}
+.topinput {
+  width: 80%;
+  margin-top: 5%;
+  border: 1px solid black;
+  font-family: Kanit;
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align:center;
+}
+.subinput {
+  width: 35%;
+    margin-top: 5%;
+  border: 1px solid black;
+  font-family: Kanit;
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 50%;
+  border-radius: 4px;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  text-align:center;
+}
+.tasksubinput {
+  width: 80%;
+    margin-top: 5%;
+  border: 1px solid black;
+  font-family: Kanit;
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 50%;
+  border-radius: 4px;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  text-align:center;
+}
+.dateinput {
+  width: 35%;
+    margin-top: 5%;
+  border: 1px solid black;
+  font-family: Kanit;
+  padding: 10px;
+  margin-left: 55%;
+  margin-right: 10%;
+  border-radius: 4px;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  text-align:center;
+}
+.generateDate {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 13%;
+  left: 0;
+  padding: 5px;
+  font-family: Kanit;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.submitExpense {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 7%;
+  left: 0;
+  padding: 5px;
+  font-family: Kanit;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.noteinput {
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  position: absolute;
+  top: 29%;
+  margin-top: 5%;
+  min-width: 80%;
+  min-height: 20%;
+  max-width: 80%;
+  max-height: 20%;
+  height: 20%;
+  left: 0;
+  padding: 10px;
+  font-family: Kanit;
+  border-radius: 4px;
+  border: 1px solid black;
+}
+.Xoff {
+  position: absolute;
+  left: 95%;
+  top: 10px;
+  padding: 5px;
+}
+.loginpage {
+width: 100vw;
+height: 100vh;
+position: absolute;
+left: 0;
+top: 0;
+
+
+background: #003973; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #003973 , #E5E5BE); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #003973 , #E5E5BE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+              
+}
+.loginform {
+position: relative;
+margin-left: 30%;
+margin-right: 30%;
+margin-top: 17%;
+height: 40%;
+width: 40%;
+border: 1px solid black;
+border-radius: 12px;
+
+
+    background-color: rgba(32, 44, 44, 0.9);
+    background: rgba(32, 44, 44, 0.9);
+    color: rgba(32, 44, 44, 0.9);
+
+
+}
+.subinputProject {
+  width: 80%;
+    margin-top: 5%;
+  border: 1px solid black;
+  font-family: Kanit;
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 50%;
+  border-radius: 4px;
+  position: absolute;
+  top: 43.5%;
+  left: 0;
+  text-align:center;
+}
+.projectsubinput {
+  height: 100px;
+  max-height: 100px;
+  width: 80%;
+  max-width: 80%;
+  margin-top: 5%;
+  border: 1px solid black;
+  font-family: Kanit;
+  padding: 10px;
+  margin-left: 10%;
+  margin-right: 50%;
+  border-radius: 4px;
+  position: absolute;
+  top: 15%;
+  left: 0;
+  text-align:center;
+}

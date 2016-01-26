@@ -7,7 +7,7 @@ var cors = require('cors');
 var db = require('mysql');
 var connection = db.createConnection({
   user: 'root',
-  password: 'finalproject',
+  password: 'Springfield1911',
   host: 'localhost',
   database: 'priismad_finalproject'
 });
@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use(function(req, res, next) {
+  console.log(req.headrers)
   if (req.headers.authorization) {
     var accId = jwt.decode(req.headers.authorization, 'final');
     if (typeof accId.accountId === 'number') {
@@ -29,31 +30,33 @@ app.use(function(req, res, next) {
 });
 
 app.post('/Signup', function(req, res) {
-  var hash = bcrypt.hashSync(req.body.password, 'finalProject');
-    connection.query('INSERT INTO Accounts (name, email, password) VALUES ("' + req.body.name + '", "' + req, body.email + '", "' + hash + '")', function(err, result) {
+  var hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(9));
+    connection.query('INSERT INTO Accounts (name, email, password) VALUES ("' + req.body.name + '", "' + req.body.email + '", "' + hash + '")', function(err, result) {
       if (err) {
         console.log(err);
       }
       if (!result || result.length === 0) {
-        res.send()
+        res.status(404).send();
       }
+      res.send(result);
     });
 });
 
 app.post('/Login', function(req, res) {
-  // var hash = bcrypt.hashSync(req.body.password, 'finalProject');
-  connection.query('SELECT * FROM Accounts WHERE Accounts.email="' + req.body.email + '" AND Accounts.password="' + req.body.password + '"', function(err, result) {
+  connection.query('SELECT * FROM Accounts WHERE Accounts.email="' + req.body.email + '"', function(err, result) {
     if (err) {
       console.log(err);
     }
     if (!result || result.length === 0) {
       res.status(404).send();
-    } else {
+    } else if (bcrypt.compareSync(req.body.password, result[0].password)){
       var payload = {
         accountId: result[0].id
       };
       var secret = 'final';
       res.send(jwt.encode(payload, secret));
+    } else {
+      res.status(404).send();
     }
   });
 });

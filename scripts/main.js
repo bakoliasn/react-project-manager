@@ -37,6 +37,7 @@ var App = React.createClass({
     )
   }
 });
+
 var Login = React.createClass({
   giveData (event) {
     const that = this;
@@ -74,10 +75,12 @@ var Signup = React.createClass({
   giveData (event) {
     const that = this;
     event.preventDefault();
+    console.log(this.refs);
+    if(that.refs.SignupPassword.value === that.refs.SignupPasswordConfirm.value) {
     request
     .post('http://127.0.0.1:3001/Signup')
     .set('Accept', 'application/json')
-    .send({ email: that.refs.email.value, password: that.refs.password.value })
+    .send({ name: that.refs.SignupName.value, email: that.refs.SignupEmail.value, password: that.refs.SignupPassword.value })
     .end(function(err, res) {
       if (err || !res.ok) {
         console.log(err);
@@ -86,14 +89,19 @@ var Signup = React.createClass({
         that.props.history.pushState(null, '/projects');
       }
     });
+  } else {
+    alert("Passwords do not match...");
+  }
   },
   render(){
     return (
       <div className="loginpage">
           <h1 style={{textAlign: 'center', fontFamily: 'Kanit', position: 'absolute', width: '100%', top: 100, fontSize: 48}}>PRJCTMNGMT</h1>
           <div className="loginform">
+            <input type="text" style={{width: '80%', padding: 10, fontFamily: 'Kanit', marginLeft: '10%', marginRight: '10%', marginTop: '7%', borderRadius: 4, border: 'none', outline: 'none'}} placeholder="Name" ref='SignupName' />
             <input type="text" style={{width: '80%', padding: 10, fontFamily: 'Kanit', marginLeft: '10%', marginRight: '10%', marginTop: '7%', borderRadius: 4, border: 'none', outline: 'none'}} placeholder="Email" ref='SignupEmail' />
-            <input type="password" style={{width: '80%', padding: 10, fontFamily: 'Kanit', marginLeft: '10%', marginRight: '10%', marginTop: '7%', borderRadius: 4, border: 'none', outline: 'none'}} placeholder="Password" ref='signupPassword'/>
+          <input type="password" style={{width: '80%', padding: 10, fontFamily: 'Kanit', marginLeft: '10%', marginRight: '10%', marginTop: '7%', borderRadius: 4, border: 'none', outline: 'none'}} placeholder="Password" ref='SignupPassword'/>
+        <input type="password" style={{width: '80%', padding: 10, fontFamily: 'Kanit', marginLeft: '10%', marginRight: '10%', marginTop: '7%', borderRadius: 4, border: 'none', outline: 'none'}} placeholder="Confirm Password" ref='SignupPasswordConfirm'/>
             <input onClick={this.giveData} type="button" className="btn btn-success" style={{ color: 'blue', width: '80%', padding: 10, fontFamily: 'Kanit', marginLeft: '10%', marginTop: '7%', borderRadius: 4, border: 'none', outline: 'none'}} defaultValue="Signup" />
           </div>
         </div>

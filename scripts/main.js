@@ -75,7 +75,6 @@ var Signup = React.createClass({
   giveData (event) {
     const that = this;
     event.preventDefault();
-    console.log(this.refs);
     if(that.refs.SignupPassword.value === that.refs.SignupPasswordConfirm.value) {
     request
     .post('http://127.0.0.1:3001/Signup')
@@ -84,10 +83,10 @@ var Signup = React.createClass({
     .end(function(err, res) {
       if (err || !res.ok) {
         console.log(err);
-      } else {
-        localStorage.setItem("token", res.text);
-        that.props.history.pushState(null, '/projects');
       }
+      localStorage.setItem("token", res.text);
+      that.props.history.pushState(null, '/projects');
+
     });
   } else {
     alert("Passwords do not match...");

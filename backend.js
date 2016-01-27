@@ -17,7 +17,6 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use(function(req, res, next) {
-  console.log(req.headrers)
   if (req.headers.authorization) {
     var accId = jwt.decode(req.headers.authorization, 'final');
     if (typeof accId.accountId === 'number') {
@@ -38,7 +37,11 @@ app.post('/Signup', function(req, res) {
       if (!result || result.length === 0) {
         res.status(404).send();
       }
-      res.send(result);
+      var payload = {
+        accountId: result.insertId
+      };
+      var secret = 'final';
+      res.send(jwt.encode(payload, secret));
     });
 });
 

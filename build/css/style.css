@@ -634,14 +634,31 @@ top: 0;
 background: #003973; /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #003973 , #E5E5BE); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #003973 , #E5E5BE); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-              
+
 }
 .loginform {
 position: relative;
 margin-left: 30%;
 margin-right: 30%;
 margin-top: 17%;
-height: 40%;
+height: 58%;
+width: 40%;
+border: 1px solid black;
+border-radius: 12px;
+
+
+    background-color: rgba(32, 44, 44, 0.9);
+    background: rgba(32, 44, 44, 0.9);
+    color: rgba(32, 44, 44, 0.9);
+
+
+}
+.signupform {
+position: relative;
+margin-left: 30%;
+margin-right: 30%;
+margin-top: 5%;
+height: 63.5%;
 width: 40%;
 border: 1px solid black;
 border-radius: 12px;

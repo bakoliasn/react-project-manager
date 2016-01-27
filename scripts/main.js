@@ -95,8 +95,8 @@ var Signup = React.createClass({
   render(){
     return (
       <div className="loginpage">
-          <h1 style={{textAlign: 'center', fontFamily: 'Kanit', position: 'absolute', width: '100%', top: 100, fontSize: 48}}>PRJCTMNGMT</h1>
-          <div className="loginform">
+          <h1 style={{textAlign: 'center', fontFamily: 'Kanit', position: 'absolute', width: '100%', top: 0, fontSize: 48}}>PRJCTMNGMT</h1>
+        <div className="signupform">
             <input type="text" style={{width: '80%', padding: 10, fontFamily: 'Kanit', marginLeft: '10%', marginRight: '10%', marginTop: '7%', borderRadius: 4, border: 'none', outline: 'none'}} placeholder="Name" ref='SignupName' />
             <input type="text" style={{width: '80%', padding: 10, fontFamily: 'Kanit', marginLeft: '10%', marginRight: '10%', marginTop: '7%', borderRadius: 4, border: 'none', outline: 'none'}} placeholder="Email" ref='SignupEmail' />
           <input type="password" style={{width: '80%', padding: 10, fontFamily: 'Kanit', marginLeft: '10%', marginRight: '10%', marginTop: '7%', borderRadius: 4, border: 'none', outline: 'none'}} placeholder="Password" ref='SignupPassword'/>

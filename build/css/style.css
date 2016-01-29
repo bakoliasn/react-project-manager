@@ -701,3 +701,6 @@ border-radius: 12px;
   left: 0;
   text-align:center;
 }
+.editNote {
+  float: right;
+}

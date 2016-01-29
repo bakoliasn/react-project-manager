@@ -818,8 +818,7 @@ var NotesPage = React.createClass ({
     });
   },
   postNote(){
-    var that = this;
-    console.log(this.refs);
+    let that = this;
     request
     .post('http://127.0.0.1:3001/Projects/' + this.props.params.id + '/Notes')
     .set('authorization', localStorage.getItem("token"))
@@ -831,6 +830,10 @@ var NotesPage = React.createClass ({
       that.fetchData();
     });
   },
+  // deleteNote(){
+  //   let that = this;
+  //   request.delete('http://127.0.0.1:3001/Projects/Notes/' + this.props???wont work because this is not THIS)
+  // },
   render(){
     if(this.state.loading){
       return <div>Loading...</div>;
@@ -838,7 +841,8 @@ var NotesPage = React.createClass ({
     return (
      <div><table className="finishedTasks magictime spaceInDown"><tbody><tr>
           <th style={{color: 'green'}} className="title" colSpan={2}>Notes
-          </th></tr>{this.state.notes?this.state.notes.map(function(item){return <tr key={Math.random() * time()} projectId={item.projectId}><td>{item.text}</td></tr>}) : <tr><td>No Notes</td></tr>}</tbody></table>
+          </th></tr>{this.state.notes?this.state.notes.map(function(item){return <tr key={Math.random() * time()} projectId={item.projectId}><td>{item.text} <button noteId={item.noteId} className="editNote">delete</button></td></tr>}) :
+          <tr><td>No Notes</td></tr>}</tbody></table>
 <br/>
             <form name='noteForm' onSubmit={this.postNote}>
               <textarea placeholder="Enter note..." className="notesInputCompleted magictime spaceInDown" type="text" defaultValue={""} form='noteForm' ref='noteText'/>

@@ -13,9 +13,9 @@ var connection = db.createConnection({
 });
 
 var app = express();
+
 app.use(bodyParser.json());
 app.use(cors());
-
 app.use(function(req, res, next) {
   if (req.headers.authorization) {
     var accId = jwt.decode(req.headers.authorization, 'final');
@@ -27,6 +27,8 @@ app.use(function(req, res, next) {
   }
   next();
 });
+
+
 
 app.post('/Signup', function(req, res) {
   var hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(9));
@@ -158,13 +160,14 @@ app.get('/Projects/:projectId/ExternalDocs', function(req, res) {
 });
 
 app.get('/Projects/:projectId/Notes', function(req, res) {
-  connection.query('SELECT * FROM Notes JOIN Projects ON Notes.projectId=Projects.id WHERE Notes.projectId="' + req.params.projectId + '" AND Projects.accountId="' + req.accountId + '"', function(err, result) {
+  connection.query('SELECT Projects.id as projectId, Notes.id as noteId, Notes.text as text FROM Notes JOIN Projects ON Notes.projectId=Projects.id WHERE Notes.projectId="' + req.params.projectId + '" AND Projects.accountId="' + req.accountId + '"', function(err, result) {
     if (err) {
       console.log(err);
     }
     if (!result || result.length === 0) {
       res.status(404).send();
     } else {
+      console.log(result);
       res.send(result);
     }
   });

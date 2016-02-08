@@ -13,9 +13,9 @@ var connection = db.createConnection({
 });
 
 var app = express();
-
-app.use(bodyParser.json());
 app.use(cors());
+app.use(bodyParser.json());
+
 
 app.use(function(req, res, next) {
   if (req.headers.authorization) {

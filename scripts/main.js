@@ -830,29 +830,41 @@ var NotesPage = React.createClass ({
       that.fetchData();
     });
   },
-  // deleteNote(){
-  //   let that = this;
-  //   request.delete('http://127.0.0.1:3001/Projects/Notes/' + this.props???wont work because this is not THIS)
-  // },
+  deleteNote(){
+    let that = this;
+console.log(this);
+  },
   render(){
+    let that = this;
     if(this.state.loading){
       return <div>Loading...</div>;
     }
     return (
-     <div><table className="finishedTasks magictime spaceInDown"><tbody><tr>
-          <th style={{color: 'green'}} className="title" colSpan={2}>Notes
-          </th></tr>{this.state.notes?this.state.notes.map(function(item){return <tr key={Math.random() * time()} projectId={item.projectId}><td>{item.text} <button noteId={item.noteId} className="editNote">delete</button></td></tr>}) :
-          <tr><td>No Notes</td></tr>}</tbody></table>
-<br/>
-            <form name='noteForm' onSubmit={this.postNote}>
-              <textarea placeholder="Enter note..." className="notesInputCompleted magictime spaceInDown" type="text" defaultValue={""} form='noteForm' ref='noteText'/>
-                    <input type="submit" style={{marginBottom: '2%'}} defaultValue="Submit" className="hoursInputButton btn btn-primary magictime spaceInDown" />
+      <div><table className="finishedTasks magictime spaceInDown"><tbody><tr>
+           <th style={{color: 'green'}} className="title" colSpan={2}>Notes
+           </th></tr>{this.state.notes?this.state.notes.map(function(item){return <tr key={Math.random() * time()} projectId={item.projectId}><td>{item.text} <button noteId={item.noteId} className="editNote">delete</button></td></tr>}) :
+           <tr><td>No Notes</td></tr>}</tbody></table>
+ <br/>
+             <form name='noteForm' onSubmit={this.postNote}>
+               <textarea placeholder="Enter note..." className="notesInputCompleted magictime spaceInDown" type="text" defaultValue={""} form='noteForm' ref='noteText'/>
+                     <input type="submit" style={{marginBottom: '2%'}} defaultValue="Submit" className="hoursInputButton btn btn-primary magictime spaceInDown" />
 
-                    </form>
-                  </div>
-    )
-  }
-});
+                     </form>
+                   </div>
+     )
+   }
+ });
+
+// var Note = React.createClass({
+//   render() {
+//     return (
+//       <tr projectId={this.props.projectId}><td>{this.props.text} <button noteId={this.props.noteId} onClick={this.deleteNote} className="editNote">delete</button></td></tr>}
+//     )
+//   }
+// })
+
+
+
 
 var HoursPage = React.createClass({
   componentWillMount() {

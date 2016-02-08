@@ -16,6 +16,7 @@ var app = express();
 
 app.use(bodyParser.json());
 app.use(cors());
+
 app.use(function(req, res, next) {
   if (req.headers.authorization) {
     var accId = jwt.decode(req.headers.authorization, 'final');

@@ -7,9 +7,10 @@ var cors = require('cors');
 var db = require('mysql');
 var connection = db.createConnection({
   user: 'root',
-  password: 'Springfield1911',
+  password: 'root',
   host: 'localhost',
-  database: 'priismad_finalproject'
+  port: '8889',
+  database: 'project'
 });
 
 var app = express();
@@ -29,7 +30,10 @@ app.use(function(req, res, next) {
   next();
 });
 
-
+// app.use(function(req, res, next){
+//   req.accountId = 1;
+//   next();
+// })
 
 app.post('/Signup', function(req, res) {
   var hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(9));

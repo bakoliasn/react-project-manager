@@ -3,8 +3,9 @@ var bodyParser = require('body-parser');
 var jwt = require('jwt-simple');
 var bcrypt = require('bcrypt');
 var cors = require('cors');
-
+var path = require('path');
 var db = require('mysql');
+
 var connection = db.createConnection({
   user: 'root',
   password: 'root',
@@ -17,6 +18,7 @@ var app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use('/public', express.static(__dirname + '/build'));
 
 app.use(function(req, res, next) {
   if (req.headers.authorization) {
@@ -34,6 +36,11 @@ app.use(function(req, res, next) {
 //   req.accountId = 1;
 //   next();
 // })
+
+
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/index.html'));
+});
 
 app.post('/Signup', function(req, res) {
   var hash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(9));
@@ -594,10 +601,6 @@ app.put('/Projects/Notes/:noteId', function(req, res) {
       });
     }
   });
-});
-
-app.get('/', function(req, res) {
-  res.send('<p>loggin form</p>');
 });
 
 var server = app.listen(3001, 'localhost', function() {
